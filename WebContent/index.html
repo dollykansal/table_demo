@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<!-- <html class="sap-desktop  sapUiTheme-sap_bluecrystal sapUiMedia-Std-Desktop"> -->
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,34 @@
 
 		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 				id="sap-ui-bootstrap"
-				data-sap-ui-libs="sap.ui.commons,sap.ui.table"
-				data-sap-ui-theme="sap_bluecrystal">
+				data-sap-ui-libs="sap.ui.commons,sap.ui.table,sap.viz"
+				data-sap-ui-theme="sap_goldreflection">
+		<!-- sap_goldreflection, sap_bluecrystal, sap_platinum-->
 		</script>
 		<!-- add sap.ui.table,sap.ui.ux3 and/or other libraries to 'data-sap-ui-libs' if required -->
-
+		
+		
+		<script>
+		 //create the ApplicationHeader control
+	        var oAppHeader = new sap.ui.commons.ApplicationHeader("appHeader"); 
+	        oAppHeader.setLogoSrc("http://www.sap.com/global/images/SAPLogo.gif");
+	        oAppHeader.setLogoText("Voyage Estimator");
+	        oAppHeader.setDisplayWelcome(true);
+	        oAppHeader.setDisplayLogoff(false);
+	        oAppHeader.placeAt("contenthdr");
+		</script>
+		
 		<script>
 				sap.ui.localResources("table");
-				var view = sap.ui.view({id:"idTable11", viewName:"table.Table1", type:sap.ui.core.mvc.ViewType.HTML});
+				var view = sap.ui.view({
+					//background: "blue",
+					//background : new sap.viz.ui5.types.Background({color : "blue", visible : true, drawingEffect : sap.viz.ui5.types.Background_drawingEffect.glossy}),
+					id:"idTable11", viewName:"table.Table1", type:sap.ui.core.mvc.ViewType.HTML});
 				view.placeAt("content");
 		</script>
-
 	</head>
 	<body class="sapUiBody" role="application">
+		<div id="contenthdr"></div>
 		<div id="content"></div>
 	</body>
 </html>

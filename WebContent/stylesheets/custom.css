@@ -1,0 +1,42 @@
+#vesselmode_1{
+top: 23px;
+width: 25px;
+left: -7px;
+padding: 0 !important;
+}
+.row{
+	margin-top:10px;
+}
+.sapUiTableColHdrCnt {
+min-height: 24px !important;
+/* background-color:blue; */
+/* font-family:sans-serif; */
+/* font-size:10pt; */
+/* color:white; */
+}
+.sapUiTableTr>td {
+padding-top: 0px;
+padding-bottom: 0px;
+}
+#idTable11 .sapUiTableCell span { font-size:10px; }
+#idTable11 .sapUiTableColCell label { font-size:10px; }
+.sapUiTableColHdrCnt{
+	height:20px;
+}
+.sapUiTableCol{
+	padding: 0;
+}
+.sapUiBody{
+/* 	background-color: #F2F2F2; */
+/* 	background-image: url("../images/blue.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size : cover; */
+}
+/* .sapUiTableColHdrCnt,.sapUiTableCol,.sapUiTableColHdr{ */
+/* 	height:15px !important; */
+/* } */
+/* .sapUiTableColHdrScr .sapUiTableCol{ */
+/* 	height:10px ; */
+/* } */

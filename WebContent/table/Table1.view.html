@@ -1,114 +1,89 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/custom.css">
 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <!-- 1.) Load SAPUI5, select theme and control library -->
-  <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-      id="sap-ui-bootstrap"
-      data-sap-ui-libs="sap.ui.commons,sap.ui.table"
-      data-sap-ui-theme="sap_goldreflection">
-     //themes : sap_platinum, sap_goldreflection
- </script>
- 
- <script>
-
-//Define some sample data 
-var aData = [
-	{vesselName: "Dente", laycan: "Al", checked: true, linkText: "www.sap.com", href: "http://www.sap.com", src: "images/person1.gif", gender: "male", rating: 4},
-	{vesselName: "Friese", laycan: "Andy", checked: true, linkText: "www.sap.com", href: "http://www.sap.com", src: "images/person2.gif", gender: "male", rating: 2},
-	{vesselName: "Mann", laycan: "Anita", checked: false, linkText: "www.sap.com", href: "http://www.sap.com", src: "images/person1.gif", gender: "female", rating: 3},
-	{vesselName: "Schutt", laycan: "Doris", checked: true, linkText: "www.sap.com", href: "http://www.sap.com", src: "images/person1.gif", gender: "female", rating: 4},
-	{vesselName: "Open", laycan: "Doris", checked: true, linkText: "www.sap.com", href: "http://www.sap.com", src: "images/person1.gif", gender: "female", rating: 2},
-	{vesselName: "Dewit", laycan: "Kenya", checked: false, linkText: "www.sap.com", href: "http://www.sap.com", src: "images/person1.gif", gender: "female", rating: 3},
-	{vesselName: "Turner", laycan: "Paige", checked: true, linkText: "www.sap.com", href: "http://www.sap.com", src: "images/person1.gif", gender: "female", rating: 3}
-];
-
-//Create an instance of the table control
-var oTable = new sap.ui.table.Table({
-	title: "Vessel Availability",
-	visibleRowCount: 7,
-	firstVisibleRow: 3,
-// 	selectionMode: sap.ui.table.SelectionMode.Single,
-	toolbar: new sap.ui.commons.Toolbar({items: [ 
-		new sap.ui.commons.Button({text: "Button in the Toolbar", press: function() { alert("Button pressed!"); }})
-	]}),
-	extension: [
-		new sap.ui.commons.Button({text: "Button in the Extension Area", press: function() { alert("Button pressed!"); }})
-	]
-});
-
-//Define the columns and the control templates to be used
-var oColumn = new sap.ui.table.Column({
-	label: new sap.ui.commons.Label({text: "Vessel Name"}),
-	template: new sap.ui.commons.TextView().bindProperty("text", "vesselName"),
-	sortProperty: "vesselName",
-	filterProperty: "vesselName",
-	width: "200px"
-});
-var oCustomMenu = new sap.ui.commons.Menu();
-oCustomMenu.addItem(new sap.ui.commons.MenuItem({
-	text:"Custom Menu",
-	select:function() {
-		alert("Custom Menu");
-	}
-}));
-oColumn.setMenu(oCustomMenu);
-oTable.addColumn(oColumn);
-oTable.addColumn(new sap.ui.table.Column({
-	label: new sap.ui.commons.Label({text: "Laycan"}),
-	template: new sap.ui.commons.TextField().bindProperty("value", "laycan"),
-	sortProperty: "laycan",
-	filterProperty: "laycan",
-	width: "100px"
-}));
-
-oTable.addColumn(new sap.ui.table.Column({
-	label: new sap.ui.commons.Label({text: "DWT"}),
-	template: new sap.ui.commons.TextField().bindProperty("value", "dwt"),
-	sortProperty: "dwt",
-	filterProperty: "dwt",
-	width: "100px"
-}));
-
-oTable.addColumn(new sap.ui.table.Column({
-	label: new sap.ui.commons.Label({text: "Draft"}),
-	template: new sap.ui.commons.TextField().bindProperty("value", "draft"),
-	sortProperty: "draft",
-	filterProperty: "draft",
-	width: "100px"
-}));
-
-oTable.addColumn(new sap.ui.table.Column({
-	label: new sap.ui.commons.Label({text: "Port"}),
-	template: new sap.ui.commons.TextField().bindProperty("value", "port"),
-	sortProperty: "port",
-	filterProperty: "port",
-	width: "100px"
-}));
+<!-- 1.) Load SAPUI5, select theme and control library -->
+</head>
 
 
-//Create a model and bind the table rows to this model
-var oModel = new sap.ui.model.json.JSONModel();
-oModel.setData({modelData: aData});
-oTable.setModel(oModel);
-oTable.bindRows("/modelData");
+<!-- --------------------------custom code-------------------------------------------------- -->
+<!--  <body class="Grid.css"> -->
+<!--   <div class="row"> -->
+<!--           <div id="VoyEst1" class="col-1"><p>col-1</p></div>  -->
+<!--           <div id="VoyEst2" class="col-1"><p>col-1</p></div>    -->
+<!--     </div>     -->
+<!--       <div class="row">  -->
+<!--           <div id="VoyEst3" class="col-2"><p>col-2</p></div>  -->
+<!--           <div id="VoyEst8" class="col-2"><p>col-2</p></div>  -->
+<!--           <div id="VoyEst4" class="col-2"><p>col-2</p></div>  -->
+<!--           <div id="VoyEst5" class="col-2"><p>col-2</p></div>     -->
+<!--     </div>  -->
+<!--       <div class="row"> -->
+<!--           <div id="VoyEst6" class="col-3"><p>col-1</p></div>  -->
+<!--           <div id="VoyEst7" class="col-3"><p>col-1</p></div>  -->
+<!--     </div>                                                     -->
+<!--  </body> -->
+<!-- ---------------------------------------------------------------------------- -->
 
-//Initially sort the table
-oTable.sort(oTable.getColumns()[0]);
-
-//Bring the table onto the UI 
- 
- oTable.placeAt("EmpTbl");
-</script>         
-          
- </head>
- <body>
- <div style="border:thin solid grey; border-radius:5px;padding:5px;width:1024px; background:rgba(50, 50, 25, .1);">
- 	<div id = "EmpTbl"></div>
- </div>
-  <div style="border:thin solid grey; border-radius:5px;padding:5px;width:1024px; background:rgba(50, 50, 25, .1);">
- 	<div id = "EmpTbl1"></div>
- </div>
- </body>
- 
- </html>
+<!-- ----------------------bootstrap code------------------------------------------------------ -->
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12" id="top_carousel"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" id="vesselchart"></div>
+		</div>		
+		<!-- <div class="row">
+  	<div class="col-md-4" id = "vesselavail"></div>
+  	<div class="col-md-8" id = "demand"></div>
+  </div> -->
+    	<div class="row">
+			<div class="col-md-12" id="splitter_comb"></div>
+		</div>
+  		<div class="row">
+			<div class="col-md-12" id="carousel_vess"></div>
+		</div>
+<!-- 		<div class="row">
+			<div class="col-md-3" id="vesselsel"></div>
+			<div class="col-md-2">
+				<div class="col-md-2" id="vesselmode_1"></div>
+				<div class="col-md-10" id="vesselmode"></div>
+			</div>
+			<div class="col-md-4" id="fo"></div>
+			<div class="col-md-3" id="do"></div>
+		</div> -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="col-md-12" id="cargo"></div> -->
+<!-- 		</div> -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="col-md-12" id="portrot"></div> -->
+<!-- 		</div> -->
+		<div class="row">
+			<div class="col-md-4" id="operexpense"></div>
+			<div class="col-md-4" id="bunkexpense"></div>
+			<div class="col-md-4" id="result"></div>
+		</div>
+	</div>
+</body>
+<!-- ---------------------------------------------------------------------------- -->
+<script src="javascripts/createTable.js"></script>
+<script src="javascripts/frtsim.js"></script>
+<!-- <script src="javascripts/vesselavail.js"></script> -->
+<!-- <script src="javascripts/demand.js"></script> -->
+<!-- <script src="javascripts/vesselsel.js"></script>
+<script src="javascripts/vesselmode.js"></script>
+<script src="javascripts/fo.js"></script>
+<script src="javascripts/do.js"></script> -->
+<!-- <script src="javascripts/cargo.js"></script> -->
+<!-- <script src="javascripts/portrot.js"></script> -->
+<script src="javascripts/operexpense.js"></script>
+<script src="javascripts/vesselchart.js"></script>
+<script src="javascripts/bunkexpense.js"></script>
+<script src="javascripts/result.js"></script>
+<script src="javascripts/top_carousel.js"></script>
+<script src="javascripts/carousel_vess.js"></script>
+<script src="javascripts/splitter_comb.js"></script>
+</html>
