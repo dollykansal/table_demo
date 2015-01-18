@@ -1,7 +1,7 @@
 (function(){
 	var margin = {top: 20, right: 20, bottom: 70, left: 40},
-    width = 300 - margin.left - margin.right,
-    height = 200 - margin.top - margin.bottom;
+    width = 700 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
 
 // Parse the date / time
 var parseDate = d3.time.format("%Y-%m").parse;
@@ -20,12 +20,21 @@ var yAxis = d3.svg.axis()
     .orient("left")
     .ticks(10);
 
+var tip = d3.tip()
+.attr('class', 'd3-tip')
+.offset([10, 0])
+.html(function(d) {
+	console.log(d.value);
+  return "<strong>Frequency:</strong> <span style='color:red'>" + d.value + "</span>";
+});
+
 var svg = d3.select("#hchart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
+svg.call(tip);
 
 d3.csv("bar-data.csv", function(data, error) {
     data.forEach(function(d) {
@@ -56,14 +65,17 @@ d3.csv("bar-data.csv", function(data, error) {
       .style("text-anchor", "end")
       .text("Capacity (MT)");
 
-  svg.selectAll("bar")
+  svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
+    .attr("class","bar")
       .style("fill", "steelblue")
       .attr("x", function(d) { return x(d.date); })
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.value); })
-      .attr("height", function(d) { return height - y(d.value); });
+      .attr("height", function(d) { return height - y(d.value); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
 
 });
 })();
