@@ -40,6 +40,18 @@ padding-bottom: 0px;
 /* .sapUiTableColHdrScr .sapUiTableCol{ */
 /* 	height:10px ; */
 /* } */
-/* #chartContainer:hover{ */
-/* 	zoom:50%; */
-/* } */
+
+#chartContainer:hover{
+	zoom:150%;
+}
+
+.axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }

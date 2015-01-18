@@ -7,46 +7,49 @@
 <!-- 1.) Load SAPUI5, select theme and control library -->
 </head>
 
-
-<!-- --------------------------custom code-------------------------------------------------- -->
-<!--  <body class="Grid.css"> -->
-<!--   <div class="row"> -->
-<!--           <div id="VoyEst1" class="col-1"><p>col-1</p></div>  -->
-<!--           <div id="VoyEst2" class="col-1"><p>col-1</p></div>    -->
-<!--     </div>     -->
-<!--       <div class="row">  -->
-<!--           <div id="VoyEst3" class="col-2"><p>col-2</p></div>  -->
-<!--           <div id="VoyEst8" class="col-2"><p>col-2</p></div>  -->
-<!--           <div id="VoyEst4" class="col-2"><p>col-2</p></div>  -->
-<!--           <div id="VoyEst5" class="col-2"><p>col-2</p></div>     -->
-<!--     </div>  -->
-<!--       <div class="row"> -->
-<!--           <div id="VoyEst6" class="col-3"><p>col-1</p></div>  -->
-<!--           <div id="VoyEst7" class="col-3"><p>col-1</p></div>  -->
-<!--     </div>                                                     -->
-<!--  </body> -->
-<!-- ---------------------------------------------------------------------------- -->
-
 <!-- ----------------------bootstrap code------------------------------------------------------ -->
 <body>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12" id="top_carousel"></div>
 		</div>
-<!-- 		<div class="row"> -->
-<!-- 			<div class="col-md-12" id="chartContainer"></div> -->
-<!-- 		</div>		 -->
+		<!-- 		<div class="row"> -->
+		<!-- 			<div class="col-md-12" id="chartContainer"></div> -->
+		<!-- 		</div>		 -->
 		<!-- <div class="row">
   	<div class="col-md-4" id = "vesselavail"></div>
   	<div class="col-md-8" id = "demand"></div>
   </div> -->
-    	<div class="row">
+		<div class="row">
 			<div class="col-md-12" id="splitter_comb"></div>
 		</div>
-  		<div class="row">
+		<div class="row">
 			<div class="col-md-12" id="carousel_vess"></div>
 		</div>
-<!-- 		<div class="row">
+		
+		<div class="row">
+			<div class="col-md-12" id="hchart"></div>
+		</div>	
+		<div class="row">
+			<div class="col-md-12">
+				<div class="btn-group pull-right">
+					<!-- <button type="button" class="btn btn-primary dropdown-toggle"
+						data-toggle="dropdown">
+						Messages per hour <span class="caret"></span>
+					</button> -->
+					<!-- 			      <ul class="dropdown-menu" role="menu"> -->
+					<!-- 			        <li><a class="m" value="2014-02-19" href="#">2014-02-19</a></li> -->
+					<!-- 			        <li><a class="m" value="2014-02-20" href="#">2014-02-20</a></li> -->
+					<!-- 			        <li><a class="m" value="2014-02-21" href="#">2014-02-21</a></li> -->
+					<!-- 			        <li><a class="m" value="2014-02-22" href="#">2014-02-22</a></li> -->
+					<!-- 			        <li><a class="m" value="2014-02-23" href="#">2014-02-23</a></li> -->
+					<!-- 			      </ul> -->
+				</div>
+
+				<div id="mbars"></div>
+			</div>
+		</div>
+		<!-- 		<div class="row">
 			<div class="col-md-3" id="vesselsel"></div>
 			<div class="col-md-2">
 				<div class="col-md-2" id="vesselmode_1"></div>
@@ -55,12 +58,12 @@
 			<div class="col-md-4" id="fo"></div>
 			<div class="col-md-3" id="do"></div>
 		</div> -->
-<!-- 		<div class="row"> -->
-<!-- 			<div class="col-md-12" id="cargo"></div> -->
-<!-- 		</div> -->
-<!-- 		<div class="row"> -->
-<!-- 			<div class="col-md-12" id="portrot"></div> -->
-<!-- 		</div> -->
+		<!-- 		<div class="row"> -->
+		<!-- 			<div class="col-md-12" id="cargo"></div> -->
+		<!-- 		</div> -->
+		<!-- 		<div class="row"> -->
+		<!-- 			<div class="col-md-12" id="portrot"></div> -->
+		<!-- 		</div> -->
 		<div class="row">
 			<div class="col-md-4" id="operexpense"></div>
 			<div class="col-md-4" id="bunkexpense"></div>
@@ -86,9 +89,15 @@
 <script src="javascripts/top_carousel.js"></script>
 <script src="javascripts/carousel_vess.js"></script>
 <script src="javascripts/splitter_comb.js"></script>
- <script type="text/javascript" src="vendor/fusioncharts-suite-xt/js/fusioncharts.js"></script>
-    <script type="text/javascript" src="vendor/fusioncharts-suite-xt/js/fusioncharts.widgets.js"></script>
-    <script type="text/javascript" src="vendor/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
+<script type="text/javascript"
+	src="vendor/fusioncharts-suite-xt/js/fusioncharts.js"></script>
+<script type="text/javascript"
+	src="vendor/fusioncharts-suite-xt/js/fusioncharts.widgets.js"></script>
+<script type="text/javascript"
+	src="vendor/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
 <!--     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script> -->
 <script src="javascripts/chart.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+<script type="text/javascript" src="javascripts/stackedChart.js"></script>
+<script type="text/javascript" src="javascripts/stackedChartH.js"></script>
 </html>
