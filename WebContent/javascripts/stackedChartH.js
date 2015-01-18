@@ -1,7 +1,7 @@
 (function(){
 	var margin = {top: 20, right: 20, bottom: 70, left: 40},
-    width = 600 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+    width = 300 - margin.left - margin.right,
+    height = 200 - margin.top - margin.bottom;
 
 // Parse the date / time
 var parseDate = d3.time.format("%Y-%m").parse;
@@ -54,7 +54,7 @@ d3.csv("bar-data.csv", function(data, error) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Value ($)");
+      .text("Capacity (MT)");
 
   svg.selectAll("bar")
       .data(data)

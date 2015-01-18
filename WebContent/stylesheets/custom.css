@@ -41,9 +41,6 @@ padding-bottom: 0px;
 /* 	height:10px ; */
 /* } */
 
-#chartContainer:hover{
-	zoom:150%;
-}
 
 .axis {
    font: 10px sans-serif;

@@ -319,7 +319,7 @@
 	oSplitterH21.addFirstPaneContent(oBarChart);
 	oSplitterV1.addSecondPaneContent(oSplitterH21);
 	oSplitterH21.addSecondPaneContent(oSplitterH22);
-	oSplitterH22.addSecondPaneContent(new sap.ui.core.HTML({content:"<div id='chartContainer' style='height:100%;width:100%;'></div>"}))
+	//oSplitterH22.addSecondPaneContent(new sap.ui.core.HTML({content:"<div id='chartContainer' style='height:100%;width:100%;'></div>"}))
 	
 //	Bring the table onto the UI 
 
