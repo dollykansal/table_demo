@@ -8,8 +8,27 @@ var oPanel = new sap.ui.commons.Panel({
 });
 oPanel.setText("Port Rotation");
 
+//Function to create the dialog
+function openDialog() {
+	var oDialog1 = new sap.ui.commons.Dialog();
+	oDialog1.setTitle("Port Rotation Gantt Chart");
+	oDialog1.addContent((new sap.ui.core.HTML({content:"<div id='ganttContainer' style='height:100%;width:100%;'></div>"})));
+	oDialog1.addButton(new sap.ui.commons.Button({text: "OK", press:function(){oDialog1.close();}}));
+	oDialog1.open();
+	window.chartHelper.createGanttChart();
+};
+
+var oButton1 = 		new sap.ui.commons.Button({
+	text : "Port Rotation Gantt Chart",
+	icon : "images/graph.jpg",
+	lite : true,
+	press : function() { openDialog(); }
+});
+//(new sap.ui.core.HTML({content:"<div id='chartContainer' style='height:100%;width:100%;'></div>"}));
+oButton1.addStyleClass("myGraphBtn");
+oPanel.addButton( oButton1);
 //Create an instance of the table control
-var oTable = window.helper.createTable();
+var oTable = window.helper.createTable({visibleRowCount: 5});
 //Define the columns and the control templates to be used
 oTable.addColumn(window.helper.createColumn("sNo", "SNo", "40px", "TV"));
 oTable.addColumn(window.helper.createColumn("type", "Type", "40px", "TF"));
@@ -36,6 +55,6 @@ oTable.bindRows("/modelData");
 //Initially sort the table
 oTable.sort(oTable.getColumns()[0]);
 oPanel.addContent(oTable);
-oPanel.placeAt("portrot");
+oPanel.placeAt("final_portrot");
 
 })();

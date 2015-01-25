@@ -103,6 +103,7 @@ oModel.setData({modelData: aData});
 oTable.setModel(oModel);
 oTable.bindRows("/modelData");
 
+
 //Initially sort the table
 oTable.sort(oTable.getColumns()[0]);
 

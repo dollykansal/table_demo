@@ -10,72 +10,36 @@
 <!-- ----------------------bootstrap code------------------------------------------------------ -->
 <body>
 	<div class="container-fluid">
+ 		<div class="row">
+			<div class="col-md-12" id="treeTable"></div>
+		</div> 
 		<div class="row">
-			<div class="col-md-12" id="top_carousel"></div>
-		</div>
-		<!-- 		<div class="row"> -->
-		<!-- 			<div class="col-md-12" id="chartContainer"></div> -->
-		<!-- 		</div>		 -->
-		<!-- <div class="row">
-  	<div class="col-md-4" id = "vesselavail"></div>
-  	<div class="col-md-8" id = "demand"></div>
-  </div> -->
-		<div class="row">
-			<div class="col-md-12" id="splitter_comb"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-12" id="carousel_vess"></div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-12" id="hchart"></div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-12" id="chartContainer"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-12" id="ganttContainer"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="btn-group pull-right">
-					<!-- <button type="button" class="btn btn-primary dropdown-toggle"
-						data-toggle="dropdown">
-						Messages per hour <span class="caret"></span>
-					</button> -->
-					<!-- 			      <ul class="dropdown-menu" role="menu"> -->
-					<!-- 			        <li><a class="m" value="2014-02-19" href="#">2014-02-19</a></li> -->
-					<!-- 			        <li><a class="m" value="2014-02-20" href="#">2014-02-20</a></li> -->
-					<!-- 			        <li><a class="m" value="2014-02-21" href="#">2014-02-21</a></li> -->
-					<!-- 			        <li><a class="m" value="2014-02-22" href="#">2014-02-22</a></li> -->
-					<!-- 			        <li><a class="m" value="2014-02-23" href="#">2014-02-23</a></li> -->
-					<!-- 			      </ul> -->
+			<div class="col-md-2" id="demandLeft"></div>
+			<div class="col-md-10" id="demandLeft">
+			
+				<div class="row">
+					<div class="col-md-12" id="processFlow"></div>
+				</div> 
+<!-- 				<div class="row">
+					<div class="col-md-12" id="top_carousel"></div>
 				</div>
-
-				<div id="mbars"></div>
+				<div class="row">
+					<div class="col-md-12" id="final_vessel"></div>
+				</div> -->
+				<div class="row">
+					<div class="col-md-12" id="final_cargo"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-12" id="final_portrot"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4" id="operexpense"></div>
+					<div class="col-md-4" id="bunkexpense"></div>
+					<div class="col-md-4" id="result"></div>
+				</div>
 			</div>
-		</div>
-		<!-- 		<div class="row">
-			<div class="col-md-3" id="vesselsel"></div>
-			<div class="col-md-2">
-				<div class="col-md-2" id="vesselmode_1"></div>
-				<div class="col-md-10" id="vesselmode"></div>
-			</div>
-			<div class="col-md-4" id="fo"></div>
-			<div class="col-md-3" id="do"></div>
-		</div> -->
-		<!-- 		<div class="row"> -->
-		<!-- 			<div class="col-md-12" id="cargo"></div> -->
-		<!-- 		</div> -->
-		<!-- 		<div class="row"> -->
-		<!-- 			<div class="col-md-12" id="portrot"></div> -->
-		<!-- 		</div> -->
-		<div class="row">
-			<div class="col-md-4" id="operexpense"></div>
-			<div class="col-md-4" id="bunkexpense"></div>
-			<div class="col-md-4" id="result"></div>
-		</div>
+		</div> 
+		
 
 	</div>
 </body>
@@ -84,31 +48,24 @@
 <script src="javascripts/tooltip.js"></script>
 <script src="javascripts/createTable.js"></script>
 <script src="javascripts/frtsim.js"></script>
-<!-- <script src="javascripts/vesselavail.js"></script> -->
-<!-- <script src="javascripts/demand.js"></script> -->
-<!-- <script src="javascripts/vesselsel.js"></script>
-<script src="javascripts/vesselmode.js"></script>
-<script src="javascripts/fo.js"></script>
-<script src="javascripts/do.js"></script> -->
-<!-- <script src="javascripts/cargo.js"></script> -->
-<!-- <script src="javascripts/portrot.js"></script> -->
 <script src="javascripts/operexpense.js"></script>
-<!-- <script src="javascripts/vesselchart.js"></script> -->
 <script src="javascripts/bunkexpense.js"></script>
 <script src="javascripts/result.js"></script>
-<script src="javascripts/top_carousel.js"></script>
-<script src="javascripts/carousel_vess.js"></script>
-<script src="javascripts/splitter_comb.js"></script>
+<!-- <script src="javascripts/top_carousel.js"></script>
+<script src="javascripts/final_vessel.js"></script> -->
+<script src="javascripts/final_cargo.js"></script>
 <script type="text/javascript"
 	src="vendor/fusioncharts-suite-xt/js/fusioncharts.js"></script>
 <script type="text/javascript"
 	src="vendor/fusioncharts-suite-xt/js/fusioncharts.widgets.js"></script>
 <script type="text/javascript"
 	src="vendor/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
-<!--     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script> -->
 <script src="javascripts/chart.js"></script>
 <script src="javascripts/ganttchart.js"></script>
-<!-- <script type="text/javascript" src="javascripts/stackedChart.js"></script> -->
-<script src="javascripts/stackedChartH.js"></script>
+<script src="javascripts/portrot.js"></script>
+ <script src="javascripts/processFlow.js"></script>
+  <script src="javascripts/demandLeft.js"></script>
+<script src="javascripts/treeTable.js"></script>  
+<!-- <script src="javascripts/stackedChartH.js"></script> -->
 
 </html>

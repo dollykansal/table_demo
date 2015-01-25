@@ -27,7 +27,7 @@ padding-bottom: 0px;
 	padding: 0;
 }
 .sapUiBody{
-/* 	background-color: #F2F2F2; */
+	background-color: #FFFFFF; 
 /* 	background-image: url("../images/blue.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -87,3 +87,7 @@ padding-bottom: 0px;
   top: 100%;
   left: 0;
 }
+.myGraphBtn{
+          position:relative;!important;
+    float:right;!important;
+   }

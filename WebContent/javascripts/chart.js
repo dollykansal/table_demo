@@ -1,3 +1,4 @@
+// final chart for cargo - status
 (function(){
         	FusionCharts.ready(function(){
         		$.getJSON('data.json',function(data){

@@ -1,7 +1,9 @@
+// final chart for vessel capacity
+
 (function(){
 	var margin = {top: 20, right: 20, bottom: 70, left: 40},
-    width = 700 - margin.left - margin.right,
-    height = 700 - margin.top - margin.bottom;
+    width = 300 - margin.left - margin.right,
+    height = 200 - margin.top - margin.bottom;
 
 // Parse the date / time
 var parseDate = d3.time.format("%Y-%m").parse;
@@ -22,7 +24,7 @@ var yAxis = d3.svg.axis()
 
 var tip = d3.tip()
 .attr('class', 'd3-tip')
-.offset([10, 0])
+.offset([-10, 0])
 .html(function(d) {
 	console.log(d.value);
   return "<strong>Frequency:</strong> <span style='color:red'>" + d.value + "</span>";
